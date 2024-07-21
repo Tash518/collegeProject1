@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitHub Login/SignUp</title>
+    <link rel="stylesheet" href="login.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        width: 300px;
+        margin: 0 auto;
+        padding-top: 50px;
+      }
+      #signup-form,
+      #login-form {
+        border: 2px solid grey;
+        margin: 60px auto;
+        padding: 30px 30px;
+        box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3);
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      .sl-label {
+        margin: 15px auto;
+        color: #8d4444;
+        margin: 10px auto;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        color: #652e2e;
+      }
+      input {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #8d4444;
+        color: white;
+      }
+      p {
+        text-align: center;
+      }
+      a {
+        color: #8d4444;
+        font-size: bold;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <h1>FitHub</h1>
+        <nav>
+          <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#login-signup">Login/SignUp</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="login-signup-card">
+      <div class="container" id="signup-form">
+        <h2 class="sl-label">Signup</h2>
+        <div class="form-group">
+          <label for="signup-username">Username</label>
+          <input
+            type="text"
+            id="signup-username"
+            placeholder="Enter Username"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="signup-email">Email</label>
+          <input
+            type="email"
+            id="signup-email"
+            placeholder="Enter Email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="signup-password">Password</label>
+          <input
+            type="password"
+            id="signup-password"
+            placeholder="Enter Password"
+            required
+          />
+        </div>
+        <button onclick="signup()">Signup</button>
+        <p>
+          Already have an account?
+          <a href="#" onclick="showLoginForm()">Login</a>
+        </p>
+      </div>
+      <div class="container" id="login-form" style="display: none">
+        <h2 class="sl-label">Login</h2>
+        <div class="form-group">
+          <label for="login-username">Username</label>
+          <input
+            type="text"
+            id="login-username"
+            placeholder="Enter Username"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="login-email">Email</label>
+          <input
+            type="email"
+            id="login-email"
+            placeholder="Enter Email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input
+            type="password"
+            id="login-password"
+            placeholder="Enter Password"
+            required
+          />
+        </div>
+        <button onclick="login()">Login</button>
+        <p>
+          Don't have an account?
+          <a href="#" onclick="showSignupForm()">Signup</a>
+        </p>
+      </div>
+    </section>
+    <footer id="contact">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <p>Email: support@fithub.com</p>
+        <p>Phone: (123) 456-7890</p>
+      </div>
+    </footer>
+    <script src="login.js"></script>
+  </body>
+</html>

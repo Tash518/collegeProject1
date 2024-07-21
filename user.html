@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitHub User Profile</title>
+    <link rel="stylesheet" href="user.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <h1>FitHub</h1>
+        <nav>
+          <ul>
+            <li><span id="username"></span></li>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <!-- <li><a href="#login-signup" onclick="logout()" id="logout-btn">Logout</a></li> -->
+            <li><a href="#login-signup"  onclick="logout()">Logout</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="hero">
+      <h3>Welcome to FitHub</h3>
+      <main>
+        <!-- User Details Section -->
+        <p id="session-status"></p>
+        <section id="user-details">
+          <h2>User Details</h2>
+          <form>
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" name="weight">
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" name="height">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+            <button type="button" onclick="saveUserDetails()">Save Details</button>
+          </form>
+        </section>
+<!-- Nutrition Tracking Section -->
+<section id="nutrition-tracking">
+<h2>Nutrition Tracking</h2>
+<div class="app-container">
+  <div class="meal-intake-form">
+      <form id="meal-form">
+          <label for="meal-name">Meal Name:</label>
+          <input type="text" id="meal-name" required>
+          <label for="meal-info">Food Item:</label>
+          <input type="text" id="meal-info" required>
+          <button type="button" id="show-info">Show Info</button>
+          <div id="food-info" style="display: none;"></div>
+          <button type="submit">Add Meal</button>
+      </form>
+  </div>
+</div>
+<div class="meal-tracking-output">
+  <h2>Meals For Today</h2>
+  <label for="meal-date">Select Date:</label>
+  <input type="date" id="meal-date" value="" />
+  <ul id="meal-list"></ul>
+  <h2>Total Calories on <span id="selected-date"></span>: <span id="total-calories">0</span></h2>
+</div>
+<section>
+  <div id="food-chart" style="display: none;">
+      <canvas id="nutrition-chart"></canvas>
+  </div>
+</section>
+<!-- Workout Tracking Section -->
+<section id="workout-tracking">
+  <h2>Generate Workouts</h2>
+    
+  <label for="style-of-workout">Style of Workout:</label>
+  <select id="style-of-workout" name="style-of-workout">
+      <option value="none">None</option>
+      <option value="calisthenics">Calisthenics</option>
+      <option value="gym">Gym</option>
+      <option value="crossfit">Crossfit</option>
+      <option value="bodybuilding">Bodybuilding</option>
+      <option value="powerlifting">Powerlifting</option>
+      <option value="cardio">Cardio</option>
+  </select><br><br>
+  
+  <label for="muscle-group">Muscle Group:</label>
+  <input type="text" id="muscle-group" name="muscle-group"><br><br>
+ 
+  <label for="workout-duration">Workout Duration (minutes):</label>
+  <input type="number" id="workout-duration" name="workout-duration"><br><br>
+   
+  <label for="difficulty">Difficulty:</label>
+  <select id="difficulty" name="difficulty">
+      <option value="beginner">Beginner</option>
+      <option value="basics">Basics</option>
+      <option value="intermediate">Intermediate</option>
+      <option value="advanced">Advanced</option>
+      <option value="expert">Expert</option>
+  </select><br><br>
+  
+  <button id="generate-workouts">Generate 5 Workouts</button>
+  <pre id="output"></pre>
+</section>
+<!-- Goal Setting Section -->
+<section id="goal-setting">
+</form>
+<pre id="goal-list" >
+<h3>Current Goals:</h3>
+
+</pre>
+</section>
+<!-- Progress Analysis Section -->
+<section id="progress-analysis">
+<h2>Log Your Progress</h2>
+<form id="progress-form" >
+<label for="progress-date">Date:</label>
+<input type="date" id="progress-date" name="progress-date" required>
+<label for="weight-change">Weight Change (kg):</label>
+<input type="number" id="weight-change" name="weight-change" step="0.1" required>
+<label for="weightlifting-number">Weight Lifting (kg):</label>
+<input type="number" id="weightlifting-number" name="weightlifting-number" required>
+<label for="body-weight-reps">Body Weight Reps:</label>
+<input type="number" id="body-weight-reps" name="body-weight-reps" required>
+<label for="hours-workout">Hours Worked Out:</label>
+<input type="number" id="hours-workout" name="hours-workout" step="0.1" required>
+<label for="cardio-done">Cardio Done (minutes):</label>
+<input type="number" id="cardio-done" name="cardio-done" required>
+<button type="submit">Genarate Your Monthly Report</button>
+</form>
+<!-- <div id="progress-list">
+<h3>Progress Tracked:</h3>
+<ul></ul>
+</div> -->
+
+</section>
+
+</section>
+</main>
+<footer id="contact">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <p>Email: support@fithub.com</p>
+        <p>Phone: (123) 456-7890</p>
+      </div>
+    </footer>
+    <script src="user.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  </body>
+</html>
