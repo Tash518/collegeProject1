@@ -75,7 +75,7 @@ function saveUserDetails() {
 // Call initializeUserDetails when the page loads to set default values if present
 document.addEventListener('DOMContentLoaded', initializeUserDetails);
 //meal tracking
-const apiKey = 'C7Oa4TY1wUXVNkR4q65DuQ==gRK9uz0gDqdhAq19';
+const apiKey = 'apikey';
 const url = 'https://api.calorieninjas.com/v1/nutrition';
 
 const mealForm = document.getElementById('meal-form');
@@ -386,7 +386,7 @@ loadMeals(currentDate);
 
 //workout tracking
 async function generateWorkouts() {
-  const apiKey = 'AIzaSyDm7yA4lHCSTw2v2QldaW66A59vBgmBU5Q';
+  const apiKey = 'apikey';
   const endpoint = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${apiKey}`;
 
   const styleOfWorkout = document.getElementById('style-of-workout').value;
